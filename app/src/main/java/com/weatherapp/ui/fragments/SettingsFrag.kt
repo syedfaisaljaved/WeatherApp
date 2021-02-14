@@ -29,6 +29,8 @@ class SettingsFrag : Fragment() {
         val view = binding.root
         userSharedPrefs = UserSharedPrefs.getSharedPref(context!!)
 
+        binding.username.text = userSharedPrefs.getUsername()
+        binding.unit.text = if (userSharedPrefs.getUnit() == "metric") "Celsius" else "Fahrenheit"
         binding.llUnit.setOnClickListener{
             createAlertDialogWithRadioButtonGroup()
         }
