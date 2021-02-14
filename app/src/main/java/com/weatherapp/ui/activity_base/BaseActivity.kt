@@ -28,7 +28,7 @@ class BaseActivity : AppCompatActivity() {
         setContentView(view)
         userSharedPrefs = UserSharedPrefs.getSharedPref(this)
 
-        askPermissions(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION) {
+        askPermissions(Manifest.permission.ACCESS_COARSE_LOCATION) {
             onDenied {
                 Toast.makeText(this@BaseActivity,"app wont work without location permissions",Toast.LENGTH_SHORT).show()
             }
