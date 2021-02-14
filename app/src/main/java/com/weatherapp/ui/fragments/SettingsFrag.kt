@@ -54,6 +54,7 @@ class SettingsFrag : Fragment() {
         alertDialog.setPositiveButton("OK") { dialog, _ ->
             val username: String = input.text.toString()
             userSharedPrefs.setUsername(username)
+            binding.username.text = username
             dialog.dismiss()
         }
 
